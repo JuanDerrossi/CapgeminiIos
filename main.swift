@@ -112,18 +112,32 @@ func cadastrarPessoa() {
     }else{
         lista.nomes.append(nome)
     }
-    
-  print("Digite uma idade")
+        
+    print("Digite uma idade")
     let idade = readLine()!
     
     print("Digite uma telefone")
     let telefone = readLine()!
+    if(telefone == "") {
+        print("Telefone não informado digite novamente")
+        cadastrarPessoa()
+    }else {
+        lista.telefones.append(telefone)
+    }
     
     print("Digite um email")
     let email = readLine()!
+    if(email == "") {
+        print("Email não informado digite novamente")
+        cadastrarPessoa()
+    }else {
+        lista.emails.append(email)
+    }
     
     lista.idades.append(idade)
     lista.telefones.append(telefone)
     lista.emails.append(email)
     apresentarLista()
 }
+
+
